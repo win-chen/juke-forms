@@ -1,0 +1,13 @@
+<div>
+  <h3>Playlists</h3>
+  	<form name="submitForm" ng-submit="submit()">
+	    <input ng-model="playlistName" required ng-maxlength="16">
+	    <button type="submit" ng-disabled="submitForm.$invalid">Submit</button>
+	    <div ng-show="submitForm.$dirty && !playlistName" class="alert alert-warning">Please enter a name</div>
+	</form>
+    <div class="list-group">
+      <div class="list-group-item" ng-repeat="playlist in playlists | filter: {name: playlistName}">
+<!--       <a ui-sref="artist({artistId: artist.id})">{{ artist.name }}</a>	 -->
+    </div>
+  </div>
+</div>
